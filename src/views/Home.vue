@@ -1,7 +1,7 @@
 <template>
   <div class="home" :class="{ 'dark': isDark }">
     <div class="container">
-      <h1 class="title">黑马 AI 应用中心</h1>
+      <h1 class="title">AI 应用中心</h1>
       <div class="cards-grid">
         <router-link 
           v-for="app in aiApps" 
