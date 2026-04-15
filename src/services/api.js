@@ -4,7 +4,7 @@ export const chatAPI = {
   // 发送聊天消息
   async sendMessage(data, chatId) {
     try {
-      const url = new URL(`${BASE_URL}/ai/chat`)
+      const url = new URL(`${BASE_URL}/springAi/chat`)
       if (chatId) {
         url.searchParams.append('chatId', chatId)
       }
@@ -29,7 +29,7 @@ export const chatAPI = {
   // 获取聊天历史列表
   async getChatHistory(type = 'chat') {  // 添加类型参数
     try {
-      const response = await fetch(`${BASE_URL}/ai/history/${type}`)
+      const response = await fetch(`${BASE_URL}/springAi/history/${type}`)
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
@@ -50,7 +50,7 @@ export const chatAPI = {
   // 获取特定对话的消息历史
   async getChatMessages(chatId, type = 'chat') {  // 添加类型参数
     try {
-      const response = await fetch(`${BASE_URL}/ai/history/${type}/${chatId}`)
+      const response = await fetch(`${BASE_URL}/springAi/history/${type}/${chatId}`)
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
@@ -69,7 +69,7 @@ export const chatAPI = {
   // 发送游戏消息
   async sendGameMessage(prompt, chatId) {
     try {
-      const response = await fetch(`${BASE_URL}/ai/game?prompt=${encodeURIComponent(prompt)}&chatId=${chatId}`, {
+      const response = await fetch(`${BASE_URL}/springAi/game?prompt=${encodeURIComponent(prompt)}&chatId=${chatId}`, {
         method: 'GET',
       })
 
@@ -87,7 +87,7 @@ export const chatAPI = {
   // 发送客服消息
   async sendServiceMessage(prompt, chatId) {
     try {
-      const response = await fetch(`${BASE_URL}/ai/service?prompt=${encodeURIComponent(prompt)}&chatId=${chatId}`, {
+      const response = await fetch(`${BASE_URL}/springAi/service?prompt=${encodeURIComponent(prompt)}&chatId=${chatId}`, {
         method: 'GET',
       })
 
@@ -105,7 +105,7 @@ export const chatAPI = {
   // 发送 PDF 问答消息
   async sendPdfMessage(prompt, chatId) {
     try {
-      const response = await fetch(`${BASE_URL}/ai/pdf/chat?prompt=${encodeURIComponent(prompt)}&chatId=${chatId}`, {
+      const response = await fetch(`${BASE_URL}/springAi/pdf/chat?prompt=${encodeURIComponent(prompt)}&chatId=${chatId}`, {
         method: 'GET',
         // 确保使用流式响应
         signal: AbortSignal.timeout(30000) // 30秒超时
