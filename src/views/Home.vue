@@ -50,7 +50,7 @@ const aiApps = ref([
   },
   {
     id: 3,
-    title: '黑马智能客服',
+    title: '智能客服',
     description: '24小时在线的智能课程咨询师',
     route: '/customer-service',
     icon: UserGroupIcon
