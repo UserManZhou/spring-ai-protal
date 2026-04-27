@@ -17,8 +17,7 @@ export const chatAPI = {
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
-      }
-
+      }      
       return response.body.getReader()
     } catch (error) {
       console.error('API Error:', error)
@@ -29,7 +28,7 @@ export const chatAPI = {
   // 获取聊天历史列表
   async getChatHistory(type = 'chat') {  // 添加类型参数
     try {
-      const response = await fetch(`${BASE_URL}/springAi/history/${type}`)
+      const response = await fetch(`${BASE_URL}/ai/history/${type}`)
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
@@ -50,7 +49,7 @@ export const chatAPI = {
   // 获取特定对话的消息历史
   async getChatMessages(chatId, type = 'chat') {  // 添加类型参数
     try {
-      const response = await fetch(`${BASE_URL}/springAi/history/${type}/${chatId}`)
+      const response = await fetch(`${BASE_URL}/ai/history/${type}/${chatId}`)
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
