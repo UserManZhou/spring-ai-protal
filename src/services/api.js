@@ -68,7 +68,7 @@ export const chatAPI = {
   // 发送游戏消息
   async sendGameMessage(prompt, chatId) {
     try {
-      const response = await fetch(`${BASE_URL}/springAi/game?prompt=${encodeURIComponent(prompt)}&chatId=${chatId}`, {
+      const response = await fetch(`${BASE_URL}/ai/game?prompt=${encodeURIComponent(prompt)}&chatId=${chatId}`, {
         method: 'GET',
       })
 
@@ -86,7 +86,7 @@ export const chatAPI = {
   // 发送客服消息
   async sendServiceMessage(prompt, chatId) {
     try {
-      const response = await fetch(`${BASE_URL}/springAi/service?prompt=${encodeURIComponent(prompt)}&chatId=${chatId}`, {
+      const response = await fetch(`${BASE_URL}/ai/service?prompt=${encodeURIComponent(prompt)}&chatId=${chatId}`, {
         method: 'GET',
       })
 
